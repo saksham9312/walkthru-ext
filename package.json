@@ -1,0 +1,81 @@
+{
+  "name": "walkthru-tour",
+  "displayName": "Walkthru Tour",
+  "description": "Interactive code walkthroughs for developers",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.playbackTour",
+    "onCommand:extension.startTour",
+    "onCommand:extension.addTourStep",
+    "onCommand:extension.saveTour"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.playbackTour",
+        "title": "Playback Tour"
+      },
+      {
+        "command": "extension.startTour",
+        "title": "Start Tour"
+      },
+      {
+        "command": "extension.addTourStep",
+        "title": "Add Tour Step"
+      },
+      {
+        "command": "extension.saveTour",
+        "title": "Save Tour"
+      },
+      {
+        "command": "extension.selectText",
+        "title": "Select Text"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "extension.playbackTour",
+          "group": "navigation"
+        },
+        {
+          "command": "extension.startTour",
+          "group": "navigation"
+        }
+      ]
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "myExtensionTreeView",
+          "name": "My Extension",
+          "when": "explorerViewletVisible && !remoteName"
+        }
+      ]
+    }
+  },
+  "permissions": [
+    "webview"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.86.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}

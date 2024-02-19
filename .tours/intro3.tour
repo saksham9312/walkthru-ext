@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "intro3",
+  "steps": [
+    {
+      "file": "extension.js",
+      "description": "jsndksndcsdncs",
+      "line": 125
+    }
+  ]
+}
